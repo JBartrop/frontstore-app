@@ -1,6 +1,6 @@
 // import logo from './logo.svg';
 import React from "react";
-import {createBrowserRouter, RouterProvider} from "react-router-dom"
+import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import './App.css';
 import Dashboard from "./pages/dashboard";
@@ -8,6 +8,7 @@ import Error from "./pages/error";
 import Signup from "./pages/signup";
 import Login from "./pages/login";
 import Main from "./layouts/main";
+import Auth from "./layouts/auth";
 
 const router = createBrowserRouter([
   {
@@ -19,7 +20,13 @@ const router = createBrowserRouter([
         index: true,
         path: "/",
         element: <Dashboard />
-      },
+      }
+    ]
+  },
+  {
+    path:"/auth",
+    element: <Auth />,
+    children: [
       {
         index: true,
         path: "signin",
