@@ -42,7 +42,6 @@ const App: React.FC = () => {
   return (
     <div className="App">
       <RouterProvider router={router} />
-      <h1>hello world</h1>
       <ToastContainer />
     </div>
   );
