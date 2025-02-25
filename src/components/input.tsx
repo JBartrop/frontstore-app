@@ -1,13 +1,25 @@
 import React from "react";
 
-interface inputType {
-    name: String;
+interface InputProps {
+    type: string;
+    name: string;
+    placeholder: string;
+    value?: string;
+    onChange: (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
 }
 
-const input: React.FC<inputType> = ({name}) => {
+const Input: React.FC<InputProps> = ({ type, name, placeholder, value, onChange }) => {
     return (
         <div>
-            <h1>inputs here</h1>
+            <input 
+            type={type} 
+            name={name} 
+            placeholder={placeholder} 
+            value={value} 
+            onChange={onChange}
+            className="p-3 border border-black m-4 bg-transparent text-black rounded-md " />
         </div>
     )
 }
+
+export default Input;

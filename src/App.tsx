@@ -3,10 +3,10 @@ import React from "react";
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import './App.css';
-import Dashboard from "./pages/dashboard";
+import Dashboard, { dashboardLoader } from "./pages/dashboard";
 import Error from "./pages/error";
 import Signup from "./pages/signup";
-import Login from "./pages/login";
+import Login, { LoginAction } from "./pages/login";
 import Main from "./layouts/main";
 import Auth from "./layouts/auth";
 
@@ -19,6 +19,7 @@ const router = createBrowserRouter([
       {
         index: true,
         path: "/",
+        loader: dashboardLoader,
         element: <Dashboard />
       }
     ]
@@ -30,7 +31,8 @@ const router = createBrowserRouter([
       {
         index: true,
         path: "signin",
-        element: <Login />
+        action:LoginAction,
+        element: <Login  />
       },
       {
         index: true,
